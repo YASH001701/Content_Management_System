@@ -12,6 +12,7 @@ public class ContentManagementSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ContentManagementSystemApplication.class, args);
+		System.out.println("the code is running");
 	}
 
 }

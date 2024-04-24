@@ -27,6 +27,7 @@ import lombok.AllArgsConstructor;
 public class BlogPostController {
 
 	private BlogPostService blogService;
+	
 
 	@Operation(description = "this endpoit  is used to create a Post Based On Blog", responses = {
 			@ApiResponse(responseCode = "200", description = "Post is Created "),
@@ -36,7 +37,11 @@ public class BlogPostController {
 	@PostMapping("/blogs/{blogId}/blog-posts")
 	private ResponseEntity<Responstructure<BlogPostResponse>> createDraft(
 			@Valid @RequestBody BlogPostRequest postRequest, @PathVariable int blogId) {
+		System.out.println("yes working");
+		System.out.println("checking for git");
+		
 		return blogService.createDraft(postRequest, blogId);
+		
 	}
 
 	@Operation(description = "this endpoit  is used to update a Post Based On postId", responses = {
@@ -78,6 +83,7 @@ public class BlogPostController {
 	{
 		return blogService.findByIdAndPostType(postId);
 	}
+
 
 
 }
